@@ -16,11 +16,10 @@
 			<ul class="actions">
 				<li>
 					<select >
-					  <option value="volvo">분류</option>
-					  <option value="saab">제목</option>
-					  <option value="mercedes">내용</option>
-					  <option value="audi">작성자</option>
-					  <option value="audi">제목 + 내용</option>
+					  <option value="volvo">Search Type</option>
+					  <option value="saab">title</option>
+					  <option value="audi">writer</option>
+					  <option value="audi">title + writer</option>
 					</select>	
 				</li>
 				<li>		
@@ -31,8 +30,8 @@
 				</li>		
 			</ul>
 		<div class='fr pt'>
-			<a href="#" class="button default small">전체목록</a>	
-			<a href="/board/register" class="button special small">글 등록</a>
+			<a href="#" class="button default small">ALL List</a>	
+			<a href="/board/register" class="button special small">Register</a>
 		</div>
 	</div><br>
 	
