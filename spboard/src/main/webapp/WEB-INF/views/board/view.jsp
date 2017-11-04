@@ -57,6 +57,22 @@
 	<form id="actionForm" action="" method="get">
 	</form>
 </div>
+
+<div class="media">
+  <div class="media-body">
+    <span>Replyer1</span><span> | 2017-11-04</span><span class='fr'>삭제 | 수정</span><br>
+    <p style="margin:0">vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    <a>답글달기</a>
+
+    <div class="media" style="padding-left: 1.75em; margin-top:0.75em">
+      <div class="media-body">
+        <span>Replyer1</span><span> | 2017-11-04</span><span class='fr'>삭제 | 수정</span><br>
+		<p style="margin:0">vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+		<a>답글달기</a>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>	
 <script type="text/javascript" src="/resources/assets/js/slick.min.js"></script>
