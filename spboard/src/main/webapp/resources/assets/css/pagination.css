@@ -1,0 +1,41 @@
+	ul.pagination {
+	    cursor: default;
+	    list-style: none;
+	    padding-left: 0;
+	}
+
+	ol, ul {
+	    display: inline-flex;
+	    -webkit-margin-before: 1em;
+	    -webkit-margin-after: 1em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+	    -webkit-padding-start: 40px;
+	}	
+	ul.pagination li > .page.active {
+    	background-color: #8c8c8c;
+    	color: #ffffff !important;
+    	padding: 0;
+    	border: 0;
+    	font-size: 100%;
+    	font: inherit;
+    	vertical-align: baseline;
+	}
+	
+	ul.pagination li > .page {
+	    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	    border-bottom: 0;
+	    border-radius: 0.375em;
+	    display: inline-block;
+	    font-size: 0.8em;
+	    font-weight: 600;
+	    height: 2em;
+	    line-height: 2em;
+	    margin: 0.5em 0.125em;
+	    min-width: 2em;
+	    padding: 0 0.5em;
+	    text-align: center;
+	}

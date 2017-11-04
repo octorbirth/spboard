@@ -24,6 +24,19 @@ public class BoardController {
     public void registerGet() {
         return;
     }
+	@GetMapping("/list")
+    public void list() {
+        return;
+    }
+	@GetMapping("/view")
+    public void viewGet() {
+        return;
+    }
+	@GetMapping("/modify")
+    public void modifyGet() {
+        return;
+    }
+	
 	
 	@PostMapping("/register")
     public void registerPost(BoardDTO dto) {
