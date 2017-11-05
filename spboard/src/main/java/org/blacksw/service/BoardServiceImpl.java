@@ -1,5 +1,7 @@
 package org.blacksw.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.annotations.Insert;
@@ -19,6 +21,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void register(BoardDTO dto) {
 		boardMapper.register(dto);
+	}
+
+	@Override
+	public List<BoardDTO> list() {
+		return boardMapper.getList();
 	}
 	
 }
