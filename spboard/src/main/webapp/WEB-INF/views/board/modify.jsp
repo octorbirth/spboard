@@ -9,7 +9,7 @@
 	<span class='fr'><a href="#" class="button small">List</a></span><br>
 	<form id='modForm' method='post'>		
 		<h5>Title:</h5>
-		<input type="text" name="title" id="title" placeholder="Title">
+		<input type="text" name="title" id="title" placeholder="Title" value='${board.title}'>
 	</form>
 	
 	<br>
@@ -37,4 +37,38 @@
 		<li><a href="#" data-oper='mod' class="button btn special">Modify</a></li>
 		<li><a href="#" data-oper='cancel' class="button btn special">Cancel</a></li>
 	</ul>
+	
+	<form id='actionForm' method="get">
+		
+	</form>
+	
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  
+  <script>
+  
+  	var actionForm = $("#actionForm");
+  	$(".btn").click(function(e) {
+		e.preventDefault();
+	});
+  	
+  	$(".btn[data-oper='del']").click(function(e) {
+		actionForm.append("<input type='hidden' name='bno' value='${board.bno}'>");
+		actionForm.attr("method", "post").attr("action","/board/remove").submit();
+	});
+  	
+  	$(".btn[data-oper='mod']").click(function(e) {
+  		e.preventDefault();
+  		var modForm = $("#modForm");
+		var title = modForm.find("input[name='title']").val();
+		if(title.length === 0){
+			alert("제목을 입력하세요!");
+			return;
+		}
+		modForm.submit();
+	});
+  
+  </script>
 <%@include file="/WEB-INF/views/include/footer.jsp"%>

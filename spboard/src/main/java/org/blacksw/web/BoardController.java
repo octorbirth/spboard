@@ -37,7 +37,8 @@ public class BoardController {
         return;
     }
 	@GetMapping("/modify")
-    public void modifyGet() {
+    public void modifyGet(Model model, Long bno) {
+		viewGet(model, bno);
         return;
     }
 	
@@ -48,5 +49,21 @@ public class BoardController {
         rttr.addFlashAttribute("result", "regsuccess");
 		return "redirect:/board/list";
     }
+	
+	@PostMapping("/remove")
+    public String removePost(BoardDTO dto, RedirectAttributes rttr) {
+        service.delete(dto);
+        rttr.addFlashAttribute("result", "delsuccess");
+		return "redirect:/board/list";
+    }
+	
+	@PostMapping("/modify")
+	public String modify(BoardDTO dto, RedirectAttributes rttr) {	
+		rttr.addAttribute("bno", dto.getBno()); // url¿¡ Ç¥½Ã
+		service.modify(dto);
+		rttr.addFlashAttribute("result", "modsuccess");
+		return "redirect:/board/view";
+		
+	}
 
 }

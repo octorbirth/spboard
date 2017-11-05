@@ -32,5 +32,17 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO get(Long bno) {
 		return boardMapper.getBoard(bno);
 	}
+
+	@Override
+	public void delete(BoardDTO dto) {
+		boardMapper.remove(dto);
+		return;
+	}
+
+	@Override
+	public void modify(BoardDTO dto) {
+		boardMapper.update(dto);
+		return;
+	}
 	
 }

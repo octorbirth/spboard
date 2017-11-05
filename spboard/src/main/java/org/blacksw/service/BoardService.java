@@ -10,4 +10,8 @@ public interface BoardService {
 	public List<BoardDTO> list();
 
 	public BoardDTO get(Long bno);
+
+	public void delete(BoardDTO dto);
+
+	public void modify(BoardDTO dto);
 }

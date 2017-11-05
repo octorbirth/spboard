@@ -74,6 +74,8 @@
 		var msg = '${result}';
 		if (msg === 'regsuccess') {
 			alert("작업처리 완료");
+		}else if(msg === 'delsuccess'){
+			alert("삭제처리 완료");
 		}
 </script>
 <%@include file="/WEB-INF/views/include/footer.jsp"%>

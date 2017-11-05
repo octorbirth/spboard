@@ -48,7 +48,7 @@
 		<br><br>
 		<div class="12u$">
 			<ul class="actions fr">
-				<a href='#'><li><button class="special button"/>Modify</li></a>
+				<a href='/board/modify?bno=${board.bno}'><li><button class="special button"/>Modify</li></a>
 				<a href='#'><li><button class="default button"/>List</li></a>
 			</ul>
 		</div>
@@ -84,5 +84,10 @@
 	  fade: true,
 	  cssEase: 'linear'
 	});
+	
+	var msg = '${result}';
+	if (msg === 'modsuccess') {
+		alert("수정 완료");
+	}
 </script>
 <%@include file="/WEB-INF/views/include/footer.jsp"%>
