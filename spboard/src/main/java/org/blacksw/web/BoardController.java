@@ -32,7 +32,8 @@ public class BoardController {
 		return;
 	}
 	@GetMapping("/view")
-    public void viewGet() {
+    public void viewGet(Model model,Long bno) {
+		model.addAttribute("board", service.get(bno));
         return;
     }
 	@GetMapping("/modify")

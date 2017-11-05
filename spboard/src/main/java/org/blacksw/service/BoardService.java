@@ -8,4 +8,6 @@ public interface BoardService {
 	public void register(BoardDTO dto);
 
 	public List<BoardDTO> list();
+
+	public BoardDTO get(Long bno);
 }

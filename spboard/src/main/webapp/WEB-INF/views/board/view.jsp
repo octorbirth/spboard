@@ -11,13 +11,13 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		<h1>${board.title }</h1>
+		<h1>${board.title}</h1>
 		<div class="row">
 			<div class="3u 12u$(medium)">
-				<h4>By SW</h4>
+				<h4>${board.writer}</h4>
 			</div>
 			<div class="5u 12u$(medium)" style="text-align: end">
-				<h4 class="icon fa-calendar-o"> ${board.regdate }</h4>
+				<h4 class="icon fa-calendar-o"> <fmt:formatDate value="${board.regdate}"	pattern="yyyy-MM-dd HH:mm" /></h4>
 			</div>
 			<div class="2u 12u$(medium)" style="text-align: end">
 				<h4 class="icon fa-eye"> 0</h4>

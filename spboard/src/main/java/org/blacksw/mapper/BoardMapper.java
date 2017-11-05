@@ -16,4 +16,7 @@ public interface BoardMapper {
 	@Select("select * from tbl_board")
 	List<BoardDTO> getList();
 
+	@Select("select * from tbl_board where bno = #{bno}")
+	BoardDTO getBoard(Long bno);
+
 }

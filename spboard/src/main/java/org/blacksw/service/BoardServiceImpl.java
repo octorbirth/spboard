@@ -27,5 +27,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardDTO> list() {
 		return boardMapper.getList();
 	}
+
+	@Override
+	public BoardDTO get(Long bno) {
+		return boardMapper.getBoard(bno);
+	}
 	
 }
