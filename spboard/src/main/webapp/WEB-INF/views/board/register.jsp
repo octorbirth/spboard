@@ -10,6 +10,7 @@
 	<form method="post" id='mainForm'>		
 		<h5>Title:</h5>
 		<input type="text" name="title" id="title" placeholder="Title">
+		<input type='hidden' name='writer' value ="UserID">
 	</form>
 	<br>
 	<h5>File:</h5>
@@ -35,4 +36,29 @@
 		<li><a href='#' class="button default">Cancel</a></li>
 		<li><a id="createBoard" class="button special">Register</a></li>
 	</ul>
+	
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script>
+
+	var mainForm = $("#mainForm");
+	
+	$("#createBoard").on("click",function(e){
+		e.preventDefault();
+		
+		var title = mainForm.find("input[name='title']").val();
+		if(title.length === 0){
+			alert("제목을 입력하세요!");
+			return;
+		}
+		
+		mainForm.submit();
+		
+		
+	});
+
+</script>
+	
 <%@include file="/WEB-INF/views/include/footer.jsp"%>

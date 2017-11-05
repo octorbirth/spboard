@@ -69,5 +69,10 @@
 										</ul>
 									</center>
 								
-
+<script>
+		var msg = '${result}';
+		if (msg === 'regsuccess') {
+			alert("작업처리 완료");
+		}
+</script>
 <%@include file="/WEB-INF/views/include/footer.jsp"%>

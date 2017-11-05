@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.java.Log;
 
@@ -39,9 +40,10 @@ public class BoardController {
 	
 	
 	@PostMapping("/register")
-    public void registerPost(BoardDTO dto) {
+    public String registerPost(BoardDTO dto, RedirectAttributes rttr) {
         service.register(dto);
-        return;
+        rttr.addFlashAttribute("result", "regsuccess");
+		return "redirect:/board/list";
     }
 
 }
