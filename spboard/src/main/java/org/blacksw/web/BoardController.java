@@ -3,10 +3,12 @@ package org.blacksw.web;
 import javax.inject.Inject;
 
 import org.blacksw.dto.BoardDTO;
+import org.blacksw.dto.Criteria;
 import org.blacksw.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,8 +29,8 @@ public class BoardController {
         return;
     }
 	@GetMapping("/list")
-	public void list(Model model) {
-		model.addAttribute("list", service.list());
+	public void list(Model model, @ModelAttribute("cri") Criteria cri) {
+		model.addAttribute("list", service.list(cri));
 		return;
 	}
 	@GetMapping("/view")

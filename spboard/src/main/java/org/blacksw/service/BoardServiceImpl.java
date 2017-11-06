@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.annotations.Insert;
 import org.blacksw.dto.BoardDTO;
+import org.blacksw.dto.Criteria;
 import org.blacksw.mapper.BoardMapper;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardDTO> list() {
-		return boardMapper.getList();
+	public List<BoardDTO> list(Criteria cri) {
+		return boardMapper.getList(cri);
 	}
 
 	@Override

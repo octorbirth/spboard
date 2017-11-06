@@ -9,14 +9,15 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.blacksw.dto.BoardDTO;
+import org.blacksw.dto.Criteria;
 
 public interface BoardMapper {
 
 	@Insert("insert into tbl_board (title, writer) values (#{title}, #{writer})")
 	void register(BoardDTO dto);
 
-	@Select("select * from tbl_board")
-	List<BoardDTO> getList();
+	
+	List<BoardDTO> getList(Criteria cri);
 
 	@Select("select * from tbl_board where bno = #{bno}")
 	BoardDTO getBoard(Long bno);
