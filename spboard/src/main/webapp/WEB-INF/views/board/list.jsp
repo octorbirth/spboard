@@ -89,9 +89,16 @@
 		$(".pagination").on("click", "li", function(e){
 			e.preventDefault();
 			var pageNum = $(this).attr('data-page');
+			var searchType = $("select[name='searchType']").val();
+			var keyword = $("input[name='keyword']").val();
+			
 			
 			if($(this).attr('data-page') !== 'none') {
-				self.location="/board/list?page="+pageNum;
+				if(searchType !== null && searchType !== 'n' && keyword !== null){ // 검색필터된 리스트	
+					self.location="/board/list?page="+pageNum+"&searchType="+searchType+"&keyword="+keyword;
+					return;
+				}	
+				self.location="/board/list?page="+pageNum; // 검색 필터 없는 리스트
 			}
 		});
 		

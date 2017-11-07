@@ -31,7 +31,6 @@ public class BoardController {
     }
 	@GetMapping("/list")
 	public void list(Model model, @ModelAttribute("cri") SearchCriteria cri) {
-		log.info("콘트롤러: " + cri);
 		model.addAttribute("list", service.list(cri));
 		return;
 	}
