@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import org.blacksw.dto.BoardDTO;
 import org.blacksw.dto.Criteria;
+import org.blacksw.dto.SearchCriteria;
 import org.blacksw.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,8 @@ public class BoardController {
         return;
     }
 	@GetMapping("/list")
-	public void list(Model model, @ModelAttribute("cri") Criteria cri) {
+	public void list(Model model, @ModelAttribute("cri") SearchCriteria cri) {
+		log.info("콘트롤러: " + cri);
 		model.addAttribute("list", service.list(cri));
 		return;
 	}

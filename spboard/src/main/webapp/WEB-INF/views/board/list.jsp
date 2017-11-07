@@ -15,18 +15,26 @@
 	
 			<ul class="actions">
 				<li>
-					<select >
-					  <option value="volvo">Search Type</option>
-					  <option value="saab">title</option>
-					  <option value="audi">writer</option>
-					  <option value="audi">title + writer</option>
-					</select>	
+						<select name="searchType">
+							<option value="n"
+								<c:out value="${cri.searchType == null?'selected':''}"/>>
+							Search Type</option>
+							<option value="t"
+								<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
+							title</option>
+							<option value="w"
+								<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
+							writer</option>
+							<option value="tw"
+								<c:out value="${cri.searchType eq 'tw'?'selected':''}"/>>
+							title + writer</option>
+						</select>
 				</li>
 				<li>		
-					<input  type="text" name="keyword" id="query" placeholder="Search" />				
+					<input  type="text" name="keyword" value = '${cri.keyword}' id="query" placeholder="Search" />				
 				</li>
 				<li>		
-					<span class="button special icon fa-search"></span>				
+					<span id="searchBtn" class="button special icon fa-search"></span>				
 				</li>		
 			</ul>
 		<div class='fr pt'>
@@ -62,6 +70,9 @@
 											
 										</ul>
 									</center>
+									
+				<form id='actionForm' method="get">	
+				</form>
 	<script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -92,5 +103,26 @@
 	    });
 		
 		$(".pagination").html(pageStr);
+		
+		$("#searchBtn").on("click",function(e){
+			var actionForm = $("#actionForm");
+			var searchType = $("select[name='searchType']").val();
+			var keyword = $("input[name='keyword']").val();
+			
+			if(searchType === null || searchType === 'n'){
+				alert("검색 분류를 설정하세요!");
+				return;
+			}
+			if(keyword.length === 0){
+				alert("검색 키워드를 입력하세요!");
+				return;
+			}
+			var str = '';
+			str += "<input type='hidden' name='page' value='1'>"; // criteria에 따로 설정 해놓았기 때문에 굳이 안 넣어져도 된다.. 
+			str += "<input type='hidden' name='searchType' value='"+searchType+"'>";
+			str += "<input type='hidden' name='keyword' value='"+keyword+"'>";
+			actionForm.append(str);
+			actionForm.submit();
+		});
 </script>
 <%@include file="/WEB-INF/views/include/footer.jsp"%>

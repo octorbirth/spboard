@@ -19,8 +19,6 @@ public interface BoardMapper {
 	
 	List<BoardDTO> getList(Criteria cri);
 	
-	
-	@Select("select count(bno) from tbl_board where bno > 0")
 	public int getTotal(Criteria cri);
 
 	@Select("select * from tbl_board where bno = #{bno}")
@@ -31,8 +29,5 @@ public interface BoardMapper {
 	
 	@Update("update tbl_board set title = #{title} where bno = #{bno}")
 	void update(BoardDTO dto);
-
-
-	
 	
 }
