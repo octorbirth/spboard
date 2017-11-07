@@ -45,6 +45,12 @@ public class Criteria {
 		return (this.page -1) * 10 ;
 	}
 	
+	public String getURI() {
+		UriComponents uriComponents = UriComponentsBuilder.newInstance()
+				.queryParam("page", page)
+				.build();
+		return uriComponents.toUriString();
+	}
 
 	@Override
 	public String toString() {

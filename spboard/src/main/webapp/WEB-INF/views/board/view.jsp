@@ -48,8 +48,8 @@
 		<br><br>
 		<div class="12u$">
 			<ul class="actions fr">
-				<a href='/board/modify?bno=${board.bno}'><li><button class="special button"/>Modify</li></a>
-				<a href='#'><li><button class="default button"/>List</li></a>
+				<a href='/board/modify?bno=${board.bno}&page=${cri.page}'><li><button class="special button"/>Modify</li></a>
+				<a href='/board/list?page=${cri.page}'><li><button class="default button"/>List</li></a>
 			</ul>
 		</div>
 	</div>

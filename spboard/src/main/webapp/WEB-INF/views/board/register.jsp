@@ -33,7 +33,7 @@
 
 
 	<ul class="actions fr">
-		<li><a href='#' class="button default">Cancel</a></li>
+		<li><a href='/board/list?page=${cri.page}' class="button default">Cancel</a></li>
 		<li><a id="createBoard" class="button special">Register</a></li>
 	</ul>
 	

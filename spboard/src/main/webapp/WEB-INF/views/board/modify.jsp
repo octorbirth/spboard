@@ -6,10 +6,12 @@
 <%@include file="/WEB-INF/views/include/header.jsp"%>
 <link rel="stylesheet" href="/resources/assets/css/custom.css?ver=3" />
 
-	<span class='fr'><a href="#" class="button small">List</a></span><br>
+	<span class='fr'><a href="/board/list?page=${cri.page}" class="button small">List</a></span><br>
 	<form id='modForm' method='post'>		
 		<h5>Title:</h5>
 		<input type="text" name="title" id="title" placeholder="Title" value='${board.title}'>
+		<input type='hidden' name='bno' value='${board.bno}'>
+		<input type='hidden' name='page' value='${cri.page}'>
 	</form>
 	
 	<br>
@@ -39,7 +41,6 @@
 	</ul>
 	
 	<form id='actionForm' method="get">
-		
 	</form>
 	
 	<script
@@ -68,6 +69,12 @@
 			return;
 		}
 		modForm.submit();
+	});
+  	
+  	$(".btn[data-oper='cancel']").click(function(e) {
+  		actionForm.append("<input type='hidden' name='bno' value='${board.bno}'>");
+  		actionForm.append("<input type='hidden' name='page' value='${cri.page}'>");
+  		actionForm.attr("action","/board/view").submit();
 	});
   
   </script>

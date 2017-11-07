@@ -25,7 +25,7 @@ public class BoardController {
 
 	
 	@GetMapping("/register")
-    public void registerGet() {
+    public void registerGet(@ModelAttribute("cri") Criteria cri) {
         return;
     }
 	@GetMapping("/list")
@@ -34,13 +34,13 @@ public class BoardController {
 		return;
 	}
 	@GetMapping("/view")
-    public void viewGet(Model model,Long bno) {
+    public void viewGet(Model model,Long bno, @ModelAttribute("cri") Criteria cri) {
 		model.addAttribute("board", service.get(bno));
         return;
     }
 	@GetMapping("/modify")
-    public void modifyGet(Model model, Long bno) {
-		viewGet(model, bno);
+    public void modifyGet(Model model, Long bno, @ModelAttribute("cri") Criteria cri) {
+		viewGet(model, bno, cri);
         return;
     }
 	
@@ -60,11 +60,11 @@ public class BoardController {
     }
 	
 	@PostMapping("/modify")
-	public String modify(BoardDTO dto, RedirectAttributes rttr) {	
+	public String modify(BoardDTO dto, RedirectAttributes rttr, @ModelAttribute("cri") Criteria cri) {	
 		rttr.addAttribute("bno", dto.getBno()); // url¿¡ Ç¥½Ã
 		service.modify(dto);
 		rttr.addFlashAttribute("result", "modsuccess");
-		return "redirect:/board/view";
+		return "redirect:/board/view" + cri.getURI();
 		
 	}
 

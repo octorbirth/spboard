@@ -26,6 +26,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardDTO> list(Criteria cri) {
+		cri.setTotal(boardMapper.getTotal(cri));
 		return boardMapper.getList(cri);
 	}
 
